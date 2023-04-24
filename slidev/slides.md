@@ -1,6 +1,6 @@
 ---
 # try also 'default' to start simple
-theme: default
+theme: seriph
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: https://source.unsplash.com/collection/94734566/1920x1080
@@ -14,12 +14,16 @@ lineNumbers: false
 info: 
 # persist drawings in exports and build
 drawings:
-  persist: true
+  persist: false
+  presenterOnly: true
 # page transition
 transition: slide-left
 # use UnoCSS
 css: unocss
-
+title: STEM 領域及女性研發人才培育計畫
+selectable: true
+record: false
+colorSchema: 'dark'
 ---
 
 # STEM
@@ -218,7 +222,7 @@ print(fractions.Fraction(1,3))
 
 ---
 
-# Declard
+# Declaration
 
 ```python{1-3|all}
 Int=2023
@@ -439,20 +443,33 @@ else:
 transition: slide-down
 ---
 
-# 練習
+## 練習
 
-<h2 v-click>0.1</h2>
-<h2 v-click>True or False</h2>
-<h2 v-click>False and False</h2>
-<h2 v-click>True and False</h2>
-<h2 v-click>not True</h2>
-<h2 v-click>14</h2>
-<h2 v-click>-5</h2>
+<div id='exam'>
+<v-clicks>
+
+0.1
+
+14
+
+-5
+
+True or False
+
+False and False
+
+True and False
+
+not True
+
+</v-clicks>
+</div>
 
 <style>
-  h2{
+  #exam{
     justify-content: center;
-    text-align:center;
+    text-align:center; 
+    font-size: 30px;
   }
 </style>
 
@@ -687,9 +704,11 @@ print(dinner)
 
 Value只會出現一次，不會重複
 
-```python{1-3|4-6}
-dinner = {'雞排', '珍奶', '滷肉飯', '麥當勞', '麥當勞','肯德基', '蛋包飯', '拉麵', '拉麵', '咖哩飯', '鍋燒意麵'}
-print(dinner)
+```python{1-2|3-4|5|6-8}
+dinner = ['雞排', '珍奶', '滷肉飯', '麥當勞', '麥當勞','肯德基', '蛋包飯', '拉麵', '拉麵', '咖哩飯', '鍋燒意麵']
+print(len(dinner))
+dinner=set(dinner)
+print(len(dinner))
 print(type(dinner))
 dinner.add("蛋餅")
 dinner.remove("雞排")
@@ -716,7 +735,8 @@ print(string.upper())
 print(string.capitalize())
 print(string.casefold())
 ```
-多行
+<v-click>
+  
 ```python
 string1="""sumary_line
 
@@ -726,7 +746,7 @@ Return: return_description
 """
 print(string1)
 ```
-
+</v-click>
 <global-bottom/>
 
 ---
